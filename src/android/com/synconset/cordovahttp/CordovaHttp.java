@@ -224,6 +224,7 @@ abstract class CordovaHttp {
       this.setupRedirect(request);
       this.setupSecurity(request);
 
+      request.connectTimeout(this.getRequestTimeout());
       request.readTimeout(this.getRequestTimeout());
       request.acceptCharset(ACCEPTED_CHARSETS);
       request.headers(this.getHeadersMap());
